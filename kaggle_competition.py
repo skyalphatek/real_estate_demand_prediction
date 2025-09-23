@@ -292,9 +292,6 @@ def predict_with_ensemble(features, target, test_features, model_type='ridge', *
     
     return np.maximum(predictions, 0)  # Ensure non-negative predictions
 
-#where is your ensamble?? -- Daniel is going to fix it !
-# if daniel doesn't know how to do ensamble (i would be surprised) but
-#i can still do the stacking(emsamble)
 
 
 # ---------------------------
