@@ -21,8 +21,9 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Define base directory and data folder
-BASE_DIR = Path(__file__).resolve().parent
-DATA_PATH = BASE_DIR / "train"
+# CHANGED: Updated from BASE_DIR/DATA_PATH to match baseline_optuna.py structure
+DATA_DIR = "data"
+TRAIN_DIR = os.path.join(DATA_DIR, "train")
 
 
 # ---------------------------
@@ -68,10 +69,12 @@ def add_time_and_sector_fields(df, month_codes):
 def load_competition_data():
 
 # Target variable data
-    train_nht = pd.read_csv(DATA_PATH / "new_house_transactions.csv")
+    # CHANGED: Updated file path to use TRAIN_DIR (matches baseline_optuna.py)
+    train_nht = pd.read_csv(os.path.join(TRAIN_DIR, "new_house_transactions.csv"))
 
 # Test data
-    test = pd.read_csv("test.csv")
+    # CHANGED: Updated file path to use DATA_DIR (matches baseline_optuna.py)
+    test = pd.read_csv(os.path.join(DATA_DIR, "test.csv"))
     return train_nht, test
 
 # ---------------------------
@@ -503,8 +506,8 @@ def main():
     a_tr, a_pred, submission = generate_enhanced_submission(best_params, groups)
     
     # Save submission
-    submission.to_csv('china-real-estate-demand-prediction/submission.csv', index=False)
-    print("Enhanced submission saved to /kaggle/working/submission.csv")
+    submission.to_csv('submission.csv', index=False)
+    print("Enhanced submission saved to submission.csv")
     
     # Additional diagnostics
     print(f"Prediction statistics:")
