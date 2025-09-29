@@ -1,0 +1,35 @@
+# Real Estate Demand Prediction - Core Dependencies
+# Install with: conda install --file requirement.txt -y
+
+# Data manipulation and analysis
+polars
+pandas
+numpy
+
+# Machine Learning
+lightgbm
+scikit-learn
+
+# Hyperparameter Optimization
+optuna
+cmaes  # For CMA-ES optimization
+
+# Optional: Advanced models for future experimentation
+xgboost
+catboost
+
+# Optional: Visualization and analysis
+matplotlib
+seaborn
+jupyterlab
+
+# Optional: Deep learning (if needed for advanced models)
+# torch
+# torchvision
+# torchaudio
+
+# Optional: Additional hyperparameter optimization
+# hyperopt
+
+# Optional: Graph neural networks (for spatial modeling)
+# torch-geometric
